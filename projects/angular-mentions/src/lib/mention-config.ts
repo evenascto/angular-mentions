@@ -39,4 +39,8 @@ export interface Mentions {
 
   // optional function to format the selected item before inserting the text
   mentionSelect?:(item: any, triggerChar?:string) => (string);
+
+  //Insert Text (false) or HTML (true)
+  insertHTML?:boolean;
+
 }

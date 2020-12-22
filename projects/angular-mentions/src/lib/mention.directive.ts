@@ -53,6 +53,7 @@ export class MentionDirective implements OnChanges {
     maxItems: -1,
     allowSpace: false,
     returnTrigger: false,
+    insertHTML: true,
     mentionSelect: (item: any, triggerChar?:string) => this.activeConfig.triggerChar + item[this.activeConfig.labelKey]
   }
 
@@ -243,7 +244,7 @@ export class MentionDirective implements OnChanges {
             const text = this.activeConfig.mentionSelect(this.searchList.activeItem, this.activeConfig.triggerChar);
             // value is inserted without a trailing space for consistency
             // between element types (div and iframe do not preserve the space)
-            insertValue(nativeElement, this.startPos, pos, text, this.iframe);
+            insertValue(nativeElement, this.startPos, pos, this.activeConfig.insertHTML, text, this.iframe);
             // fire input event so angular bindings are updated
             if ("createEvent" in document) {
               let evt = document.createEvent("HTMLEvents");
@@ -306,7 +307,7 @@ export class MentionDirective implements OnChanges {
   public startSearch(triggerChar?: string, nativeElement: HTMLInputElement = this._element.nativeElement) {
     triggerChar = triggerChar || this.mentionConfig.triggerChar || this.DEFAULT_CONFIG.triggerChar;
     const pos = getCaretPosition(nativeElement, this.iframe);
-    insertValue(nativeElement, pos, pos, triggerChar, this.iframe);
+    insertValue(nativeElement, pos, pos, this.activeConfig.insertHTML, triggerChar, this.iframe);
     this.keyHandler({ key: triggerChar, inputEvent: true }, nativeElement);
   }
 
