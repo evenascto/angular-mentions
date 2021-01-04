@@ -87,6 +87,9 @@ function insertElement(
   var anchorNode = selObj.anchorNode;
 
   //Get the text that preceeded and followed what was typed as part of the autocomplete
+  console.log(selObj);
+  console.log(anchorNode);
+  console.log(anchorNode.nodeValue);
   var beforeString = anchorNode.nodeValue.substr(0, start);
   var afterString = anchorNode.nodeValue.substring(end);
 

@@ -1,5 +1,5 @@
 /**
  * Generated bundle index. Do not edit.
  */
-/// <amd-module name="angular-mentions" />
 export * from './public-api';
+export { MentionListComponent as ɵa } from './lib/mention-list.component';

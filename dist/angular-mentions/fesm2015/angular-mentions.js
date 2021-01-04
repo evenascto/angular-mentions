@@ -1,5 +1,6 @@
-import { ɵɵtext, ɵɵnextContext, ɵɵtextInterpolate1, ɵɵgetCurrentView, ɵɵelementStart, ɵɵlistener, ɵɵrestoreView, ɵɵtemplate, ɵɵelementEnd, ɵɵclassProp, ɵɵadvance, ɵɵproperty, ɵɵpureFunction1, EventEmitter, ɵɵdirectiveInject, ElementRef, ɵɵdefineComponent, ɵɵstaticViewQuery, ɵɵqueryRefresh, ɵɵloadQuery, ɵɵtemplateRefExtractor, ɵsetClassMetadata, Component, Input, Output, ViewChild, ComponentFactoryResolver, ViewContainerRef, ɵɵdefineDirective, ɵɵNgOnChangesFeature, Directive, ɵɵdefineNgModule, ɵɵdefineInjector, ɵɵsetNgModuleScope, NgModule } from '@angular/core';
-import { NgForOf, NgTemplateOutlet, CommonModule } from '@angular/common';
+import { __decorate, __metadata } from 'tslib';
+import { EventEmitter, ElementRef, Input, TemplateRef, Output, ViewChild, Component, ComponentFactoryResolver, ViewContainerRef, Directive, NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 // DOM element manipulation functions...
 //
@@ -360,42 +361,13 @@ function getCaretCoordinates(element, position, options) {
 // }
 // }());
 
-const _c0 = ["list"];
-const _c1 = ["defaultItemTemplate"];
-function MentionListComponent_ng_template_0_Template(rf, ctx) { if (rf & 1) {
-    ɵɵtext(0);
-} if (rf & 2) {
-    const item_r4 = ctx.item;
-    const ctx_r1 = ɵɵnextContext();
-    ɵɵtextInterpolate1(" ", item_r4[ctx_r1.labelKey], " ");
-} }
-function MentionListComponent_li_4_ng_template_2_Template(rf, ctx) { }
-const _c2 = function (a0) { return { "item": a0 }; };
-function MentionListComponent_li_4_Template(rf, ctx) { if (rf & 1) {
-    const _r9 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "li");
-    ɵɵelementStart(1, "a", 4);
-    ɵɵlistener("mousedown", function MentionListComponent_li_4_Template_a_mousedown_1_listener($event) { ɵɵrestoreView(_r9); const i_r6 = ctx.index; const ctx_r8 = ɵɵnextContext(); ctx_r8.activeIndex = i_r6; ctx_r8.itemClick.emit(); return $event.preventDefault(); });
-    ɵɵtemplate(2, MentionListComponent_li_4_ng_template_2_Template, 0, 0, "ng-template", 5);
-    ɵɵelementEnd();
-    ɵɵelementEnd();
-} if (rf & 2) {
-    const item_r5 = ctx.$implicit;
-    const i_r6 = ctx.index;
-    const ctx_r3 = ɵɵnextContext();
-    ɵɵclassProp("active", ctx_r3.activeIndex == i_r6)("mention-active", !ctx_r3.styleOff && ctx_r3.activeIndex == i_r6);
-    ɵɵadvance(1);
-    ɵɵclassProp("mention-item", !ctx_r3.styleOff);
-    ɵɵadvance(1);
-    ɵɵproperty("ngTemplateOutlet", ctx_r3.itemTemplate)("ngTemplateOutletContext", ɵɵpureFunction1(8, _c2, item_r5));
-} }
 /**
  * Angular Mentions.
  * https://github.com/dmacfarlane/angular-mentions
  *
  * Copyright (c) 2016 Dan MacFarlane
  */
-class MentionListComponent {
+let MentionListComponent = class MentionListComponent {
     constructor(element) {
         this.element = element;
         this.labelKey = 'label';
@@ -515,33 +487,34 @@ class MentionListComponent {
             width: parseFloat(parentStyles.fontSize)
         };
     }
-}
-MentionListComponent.ɵfac = function MentionListComponent_Factory(t) { return new (t || MentionListComponent)(ɵɵdirectiveInject(ElementRef)); };
-MentionListComponent.ɵcmp = ɵɵdefineComponent({ type: MentionListComponent, selectors: [["mention-list"]], viewQuery: function MentionListComponent_Query(rf, ctx) { if (rf & 1) {
-        ɵɵstaticViewQuery(_c0, true);
-        ɵɵstaticViewQuery(_c1, true);
-    } if (rf & 2) {
-        var _t;
-        ɵɵqueryRefresh(_t = ɵɵloadQuery()) && (ctx.list = _t.first);
-        ɵɵqueryRefresh(_t = ɵɵloadQuery()) && (ctx.defaultItemTemplate = _t.first);
-    } }, inputs: { labelKey: "labelKey", itemTemplate: "itemTemplate" }, outputs: { itemClick: "itemClick" }, decls: 5, vars: 6, consts: [["defaultItemTemplate", ""], [1, "dropdown-menu", "scrollable-menu", 3, "hidden"], ["list", ""], [3, "active", "mention-active", 4, "ngFor", "ngForOf"], [1, "dropdown-item", 3, "mousedown"], [3, "ngTemplateOutlet", "ngTemplateOutletContext"]], template: function MentionListComponent_Template(rf, ctx) { if (rf & 1) {
-        ɵɵtemplate(0, MentionListComponent_ng_template_0_Template, 1, 1, "ng-template", null, 0, ɵɵtemplateRefExtractor);
-        ɵɵelementStart(2, "ul", 1, 2);
-        ɵɵtemplate(4, MentionListComponent_li_4_Template, 3, 10, "li", 3);
-        ɵɵelementEnd();
-    } if (rf & 2) {
-        ɵɵadvance(2);
-        ɵɵclassProp("mention-menu", !ctx.styleOff)("mention-dropdown", !ctx.styleOff && ctx.dropUp);
-        ɵɵproperty("hidden", ctx.hidden);
-        ɵɵadvance(2);
-        ɵɵproperty("ngForOf", ctx.items);
-    } }, directives: [NgForOf, NgTemplateOutlet], styles: [".mention-menu[_ngcontent-%COMP%]{position:absolute;top:100%;left:0;z-index:1000;display:none;float:left;min-width:11em;padding:.5em 0;margin:.125em 0 0;font-size:1em;color:#212529;text-align:left;list-style:none;background-color:#fff;background-clip:padding-box;border:1px solid rgba(0,0,0,.15);border-radius:.25em}.mention-item[_ngcontent-%COMP%]{display:block;padding:.2em 1.5em;line-height:1.5em;clear:both;font-weight:400;color:#212529;text-align:inherit;white-space:nowrap;background-color:transparent;border:0}.mention-active[_ngcontent-%COMP%] > a[_ngcontent-%COMP%]{color:#fff;text-decoration:none;background-color:#337ab7;outline:0}.scrollable-menu[_ngcontent-%COMP%]{display:block;height:auto;max-height:292px;overflow:auto}[hidden][_ngcontent-%COMP%]{display:none}.mention-dropdown[_ngcontent-%COMP%]{bottom:100%;top:auto;margin-bottom:2px}"] });
-/*@__PURE__*/ (function () { ɵsetClassMetadata(MentionListComponent, [{
-        type: Component,
-        args: [{
-                selector: 'mention-list',
-                styleUrls: ['./mention-list.component.scss'],
-                template: `
+};
+MentionListComponent.ctorParameters = () => [
+    { type: ElementRef }
+];
+__decorate([
+    Input(),
+    __metadata("design:type", String)
+], MentionListComponent.prototype, "labelKey", void 0);
+__decorate([
+    Input(),
+    __metadata("design:type", TemplateRef)
+], MentionListComponent.prototype, "itemTemplate", void 0);
+__decorate([
+    Output(),
+    __metadata("design:type", Object)
+], MentionListComponent.prototype, "itemClick", void 0);
+__decorate([
+    ViewChild('list', { static: true }),
+    __metadata("design:type", ElementRef)
+], MentionListComponent.prototype, "list", void 0);
+__decorate([
+    ViewChild('defaultItemTemplate', { static: true }),
+    __metadata("design:type", TemplateRef)
+], MentionListComponent.prototype, "defaultItemTemplate", void 0);
+MentionListComponent = __decorate([
+    Component({
+        selector: 'mention-list',
+        template: `
     <ng-template #defaultItemTemplate let-item="item">
       {{item[labelKey]}}
     </ng-template>
@@ -555,21 +528,11 @@ MentionListComponent.ɵcmp = ɵɵdefineComponent({ type: MentionListComponent, s
         </a>
       </li>
     </ul>
-    `
-            }]
-    }], function () { return [{ type: ElementRef }]; }, { labelKey: [{
-            type: Input
-        }], itemTemplate: [{
-            type: Input
-        }], itemClick: [{
-            type: Output
-        }], list: [{
-            type: ViewChild,
-            args: ['list', { static: true }]
-        }], defaultItemTemplate: [{
-            type: ViewChild,
-            args: ['defaultItemTemplate', { static: true }]
-        }] }); })();
+    `,
+        styles: [".mention-menu{position:absolute;top:100%;left:0;z-index:1000;display:none;float:left;min-width:11em;padding:.5em 0;margin:.125em 0 0;font-size:1em;color:#212529;text-align:left;list-style:none;background-color:#fff;background-clip:padding-box;border:1px solid rgba(0,0,0,.15);border-radius:.25em}.mention-item{display:block;padding:.2em 1.5em;line-height:1.5em;clear:both;font-weight:400;color:#212529;text-align:inherit;white-space:nowrap;background-color:transparent;border:0}.mention-active>a{color:#fff;text-decoration:none;background-color:#337ab7;outline:0}.scrollable-menu{display:block;height:auto;max-height:292px;overflow:auto}[hidden]{display:none}.mention-dropdown{bottom:100%;top:auto;margin-bottom:2px}"]
+    }),
+    __metadata("design:paramtypes", [ElementRef])
+], MentionListComponent);
 
 const KEY_BACKSPACE = 8;
 const KEY_TAB = 9;
@@ -588,7 +551,7 @@ const KEY_BUFFERED = 229;
  *
  * Copyright (c) 2017 Dan MacFarlane
  */
-class MentionDirective {
+let MentionDirective = class MentionDirective {
     constructor(_element, _componentResolver, _viewContainerRef) {
         this._element = _element;
         this._componentResolver = _componentResolver;
@@ -872,65 +835,75 @@ class MentionDirective {
         this.searchList.position(nativeElement, this.iframe);
         window.requestAnimationFrame(() => this.searchList.reset());
     }
-}
-MentionDirective.ɵfac = function MentionDirective_Factory(t) { return new (t || MentionDirective)(ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(ComponentFactoryResolver), ɵɵdirectiveInject(ViewContainerRef)); };
-MentionDirective.ɵdir = ɵɵdefineDirective({ type: MentionDirective, selectors: [["", "mention", ""], ["", "mentionConfig", ""]], hostAttrs: ["autocomplete", "off"], hostBindings: function MentionDirective_HostBindings(rf, ctx) { if (rf & 1) {
-        ɵɵlistener("keydown", function MentionDirective_keydown_HostBindingHandler($event) { return ctx.keyHandler($event); })("input", function MentionDirective_input_HostBindingHandler($event) { return ctx.inputHandler($event); })("blur", function MentionDirective_blur_HostBindingHandler($event) { return ctx.blurHandler($event); });
-    } }, inputs: { mention: "mention", mentionConfig: "mentionConfig", mentionListTemplate: "mentionListTemplate" }, outputs: { searchTerm: "searchTerm", itemSelected: "itemSelected", opened: "opened", closed: "closed" }, features: [ɵɵNgOnChangesFeature] });
-/*@__PURE__*/ (function () { ɵsetClassMetadata(MentionDirective, [{
-        type: Directive,
-        args: [{
-                selector: '[mention], [mentionConfig]',
-                host: {
-                    '(keydown)': 'keyHandler($event)',
-                    '(input)': 'inputHandler($event)',
-                    '(blur)': 'blurHandler($event)',
-                    'autocomplete': 'off'
-                }
-            }]
-    }], function () { return [{ type: ElementRef }, { type: ComponentFactoryResolver }, { type: ViewContainerRef }]; }, { mention: [{
-            type: Input,
-            args: ['mention']
-        }], mentionConfig: [{
-            type: Input
-        }], mentionListTemplate: [{
-            type: Input
-        }], searchTerm: [{
-            type: Output
-        }], itemSelected: [{
-            type: Output
-        }], opened: [{
-            type: Output
-        }], closed: [{
-            type: Output
-        }] }); })();
+};
+MentionDirective.ctorParameters = () => [
+    { type: ElementRef },
+    { type: ComponentFactoryResolver },
+    { type: ViewContainerRef }
+];
+__decorate([
+    Input('mention'),
+    __metadata("design:type", Array),
+    __metadata("design:paramtypes", [Array])
+], MentionDirective.prototype, "mention", null);
+__decorate([
+    Input(),
+    __metadata("design:type", Object)
+], MentionDirective.prototype, "mentionConfig", void 0);
+__decorate([
+    Input(),
+    __metadata("design:type", TemplateRef)
+], MentionDirective.prototype, "mentionListTemplate", void 0);
+__decorate([
+    Output(),
+    __metadata("design:type", Object)
+], MentionDirective.prototype, "searchTerm", void 0);
+__decorate([
+    Output(),
+    __metadata("design:type", Object)
+], MentionDirective.prototype, "itemSelected", void 0);
+__decorate([
+    Output(),
+    __metadata("design:type", Object)
+], MentionDirective.prototype, "opened", void 0);
+__decorate([
+    Output(),
+    __metadata("design:type", Object)
+], MentionDirective.prototype, "closed", void 0);
+MentionDirective = __decorate([
+    Directive({
+        selector: '[mention], [mentionConfig]',
+        host: {
+            '(keydown)': 'keyHandler($event)',
+            '(input)': 'inputHandler($event)',
+            '(blur)': 'blurHandler($event)',
+            'autocomplete': 'off'
+        }
+    }),
+    __metadata("design:paramtypes", [ElementRef,
+        ComponentFactoryResolver,
+        ViewContainerRef])
+], MentionDirective);
 
-class MentionModule {
-}
-MentionModule.ɵmod = ɵɵdefineNgModule({ type: MentionModule });
-MentionModule.ɵinj = ɵɵdefineInjector({ factory: function MentionModule_Factory(t) { return new (t || MentionModule)(); }, imports: [[
+let MentionModule = class MentionModule {
+};
+MentionModule = __decorate([
+    NgModule({
+        declarations: [
+            MentionDirective,
+            MentionListComponent
+        ],
+        imports: [
             CommonModule
-        ]] });
-(function () { (typeof ngJitMode === "undefined" || ngJitMode) && ɵɵsetNgModuleScope(MentionModule, { declarations: [MentionDirective,
-        MentionListComponent], imports: [CommonModule], exports: [MentionDirective] }); })();
-/*@__PURE__*/ (function () { ɵsetClassMetadata(MentionModule, [{
-        type: NgModule,
-        args: [{
-                declarations: [
-                    MentionDirective,
-                    MentionListComponent
-                ],
-                imports: [
-                    CommonModule
-                ],
-                exports: [
-                    MentionDirective
-                ],
-                entryComponents: [
-                    MentionListComponent
-                ]
-            }]
-    }], null, null); })();
+        ],
+        exports: [
+            MentionDirective
+        ],
+        entryComponents: [
+            MentionListComponent
+        ]
+    })
+], MentionModule);
 
 /*
  * Public API Surface of angular-mentions
@@ -940,5 +913,5 @@ MentionModule.ɵinj = ɵɵdefineInjector({ factory: function MentionModule_Facto
  * Generated bundle index. Do not edit.
  */
 
-export { MentionDirective, MentionModule };
+export { MentionDirective, MentionModule, MentionListComponent as ɵa };
 //# sourceMappingURL=angular-mentions.js.map

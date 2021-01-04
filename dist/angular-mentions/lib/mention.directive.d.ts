@@ -1,7 +1,6 @@
 import { ComponentFactoryResolver, ElementRef, TemplateRef, ViewContainerRef } from "@angular/core";
 import { EventEmitter, OnChanges, SimpleChanges } from "@angular/core";
 import { MentionConfig } from "./mention-config";
-import * as i0 from "@angular/core";
 /**
  * Angular Mentions.
  * https://github.com/dmacfarlane/angular-mentions
@@ -13,15 +12,15 @@ export declare class MentionDirective implements OnChanges {
     private _componentResolver;
     private _viewContainerRef;
     private mentionItems;
-    set mention(items: any[]);
+    mention: any[];
     mentionConfig: MentionConfig;
     private activeConfig;
     private DEFAULT_CONFIG;
     mentionListTemplate: TemplateRef<any>;
     searchTerm: EventEmitter<string>;
     itemSelected: EventEmitter<any>;
-    opened: EventEmitter<any>;
-    closed: EventEmitter<any>;
+    opened: EventEmitter<{}>;
+    closed: EventEmitter<{}>;
     private triggerChars;
     private searchString;
     private startPos;
@@ -43,6 +42,4 @@ export declare class MentionDirective implements OnChanges {
     stopSearch(): void;
     updateSearchList(): void;
     showSearchList(nativeElement: HTMLInputElement): void;
-    static ɵfac: i0.ɵɵFactoryDef<MentionDirective, never>;
-    static ɵdir: i0.ɵɵDirectiveDefWithMeta<MentionDirective, "[mention], [mentionConfig]", never, { "mention": "mention"; "mentionConfig": "mentionConfig"; "mentionListTemplate": "mentionListTemplate"; }, { "searchTerm": "searchTerm"; "itemSelected": "itemSelected"; "opened": "opened"; "closed": "closed"; }, never>;
 }

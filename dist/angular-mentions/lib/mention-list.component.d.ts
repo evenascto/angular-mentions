@@ -1,5 +1,4 @@
 import { ElementRef, EventEmitter, TemplateRef, AfterContentChecked } from '@angular/core';
-import * as i0 from "@angular/core";
 /**
  * Angular Mentions.
  * https://github.com/dmacfarlane/angular-mentions
@@ -10,7 +9,7 @@ export declare class MentionListComponent implements AfterContentChecked {
     private element;
     labelKey: string;
     itemTemplate: TemplateRef<any>;
-    itemClick: EventEmitter<any>;
+    itemClick: EventEmitter<{}>;
     list: ElementRef;
     defaultItemTemplate: TemplateRef<any>;
     items: any[];
@@ -23,13 +22,11 @@ export declare class MentionListComponent implements AfterContentChecked {
     constructor(element: ElementRef);
     ngAfterContentChecked(): void;
     position(nativeParentElement: HTMLInputElement, iframe?: HTMLIFrameElement): void;
-    get activeItem(): any;
+    readonly activeItem: any;
     activateNextItem(): void;
     activatePreviousItem(): void;
     reset(): void;
     private checkBounds;
     private positionElement;
     private getBlockCursorDimensions;
-    static ɵfac: i0.ɵɵFactoryDef<MentionListComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDefWithMeta<MentionListComponent, "mention-list", never, { "labelKey": "labelKey"; "itemTemplate": "itemTemplate"; }, { "itemClick": "itemClick"; }, never, never>;
 }
