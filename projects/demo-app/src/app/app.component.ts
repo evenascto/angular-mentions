@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { Editor } from 'primeng/editor';
+//import {  Quill } from 'quill'
+import * as Quill from 'quill';
+import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 import { COMMON_NAMES } from './common-names';
 
@@ -12,6 +16,8 @@ import { COMMON_NAMES } from './common-names';
 })
 export class AppComponent {
   //items: string[] = COMMON_NAMES;
+  public Editor = ClassicEditor;
+  text: string;
   items: any = [
     {
       id: 108,
@@ -25,7 +31,12 @@ export class AppComponent {
     }
   ];
 
-
+  ngOnInit() {
+    var Block  = Quill.import('blots/block');
+    //Block.tagName = 'DIV';
+    Block.tagName = 'TS';
+    Quill.register(Block, true);
+  }
   /**
    * Note: There is no way to add a trailing space after this span.
    * There will be useability consequences.
@@ -44,7 +55,7 @@ export class AppComponent {
    */
   public insertSpanText(item) {
     return `<span mentionElementId="${item.id}"
-    class="mention-selected"
+    class="mention-selected" style="color:red;"
       contenteditable="false"
       >${item.name}</span>&nbsp;`;
   }
@@ -63,3 +74,4 @@ export class AppComponent {
     }
   }
 }
+

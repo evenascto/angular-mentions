@@ -1,29 +1,23 @@
-# Angular Mentions
+# Kl Angular Mentions
 
 Simple Angular mentions inspired by [Ment.io](https://github.com/jeff-collins/ment.io).
+a fork of http://dmacfarlane.github.io/angular-mentions/
 
-[Click here for a Demo](http://dmacfarlane.github.io/angular-mentions/)
 
 Provides auto-complete suggestions for @mentions in text input fields, text areas,
 and content editable fields.
 
-To install and start the demo application:
-
-    git clone https://github.com/dmacfarlane/angular-mentions.git
-    cd angular-mentions
-    npm install
-    ng serve
 
 ### Usage
 
 Add the package as a dependency to your project using:
 
-    npm install angular-mentions
+    npm install kl-angular-mentions
 
 Add the module to your app.module imports:
 
 ```typescript
-import { MentionModule } from 'angular-mentions';
+import { MentionModule } from 'kl-angular-mentions';
 ...
 
 @NgModule({

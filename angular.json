@@ -3,38 +3,38 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-mentions": {
-      "root": "projects/angular-mentions",
-      "sourceRoot": "projects/angular-mentions/src",
+    "kl-angular-mentions": {
+      "root": "projects/kl-angular-mentions",
+      "sourceRoot": "projects/kl-angular-mentions/src",
       "projectType": "library",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
-            "tsConfig": "projects/angular-mentions/tsconfig.lib.json",
-            "project": "projects/angular-mentions/ng-package.json"
+            "tsConfig": "projects/kl-angular-mentions/tsconfig.lib.json",
+            "project": "projects/kl-angular-mentions/ng-package.json"
           }
         ,          "configurations": {
             "production": {
-              "tsConfig": "projects/angular-mentions/tsconfig.lib.prod.json"
+              "tsConfig": "projects/kl-angular-mentions/tsconfig.lib.prod.json"
             }
           }
 },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/angular-mentions/src/test.ts",
-            "tsConfig": "projects/angular-mentions/tsconfig.spec.json",
-            "karmaConfig": "projects/angular-mentions/karma.conf.js"
+            "main": "projects/kl-angular-mentions/src/test.ts",
+            "tsConfig": "projects/kl-angular-mentions/tsconfig.spec.json",
+            "karmaConfig": "projects/kl-angular-mentions/karma.conf.js"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/angular-mentions/tsconfig.lib.json",
-              "projects/angular-mentions/tsconfig.spec.json"
+              "projects/kl-angular-mentions/tsconfig.lib.json",
+              "projects/kl-angular-mentions/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -64,9 +64,12 @@
               "projects/demo-app/src/assets"
             ],
             "styles": [
-              "projects/demo-app/src/styles.css"
+              "projects/demo-app/src/styles.css",
+              "node_modules/quill/dist/quill.core.css", 
+              "node_modules/quill/dist/quill.snow.css"
             ],
-            "scripts": [],
+            "scripts": [ "node_modules/quill/dist/quill.js"],
+
             "es5BrowserSupport": true
           },
           "configurations": {
@@ -177,5 +180,5 @@
       }
     }
   },
-  "defaultProject": "angular-mentions"
+  "defaultProject": "kl-angular-mentions"
 }
