@@ -145,6 +145,7 @@ export class MentionListComponent implements AfterContentChecked {
   }
 
   private positionElement(left:number=this.coords.left, top:number=this.coords.top, dropUp:boolean=this.dropUp) {
+    
     const el: HTMLElement = this.element.nativeElement;
     top += dropUp ? 0 : this.offset; // top of list is next line
     el.className = dropUp ? 'dropup' : null;

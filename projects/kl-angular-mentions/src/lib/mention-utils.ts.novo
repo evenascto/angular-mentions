@@ -33,14 +33,6 @@ export function insertValue(
   else if (!noRecursion) {
     let selObj: Selection = getWindowSelection(iframe);
     if (selObj && selObj.rangeCount > 0) {
-      // var selRange = selObj.getRangeAt(0);
-      // var position = selRange.startOffset;
-      // var anchorNode = selObj.anchorNode;
-      // if (text.endsWith(' ')) {
-      //   text = text.substring(0, text.length-1) + '\xA0';
-      // }
-      // insertValue(<HTMLInputElement>anchorNode, position - (end - start), position, text, iframe, true);
-
       if (insertHTML) {
         insertElement(selObj, start, end, text, iframe);
       }
@@ -90,24 +82,6 @@ function insertElement(
   var beforeString = anchorNode.nodeValue.substr(0, start);
   var afterString = anchorNode.nodeValue.substring(end);
 
-   console.log("beforeString:",beforeString);
-   console.log("afterString:",afterString);
-
- //removing previous typed search string
- var positionChar = beforeString.lastIndexOf('@');
-
- console.log(" positionChar:", positionChar);
-
- if(positionChar < 0) {
-  beforeString = beforeString + '@';
-  var positionChar = beforeString.lastIndexOf('@');
-  console.log(" beforeString 2:", beforeString);
-}
-
-
- beforeString = beforeString.substring(0,  positionChar + 1);
- console.log("beforeString final:",beforeString);
-
   //Remove the text
   anchorNode.nodeValue = "";
 
@@ -127,7 +101,7 @@ function insertElement(
   range.selectNode(afterEl);
   range.setStart(afterEl, 0);
   range.setEnd(afterEl, 0);
-
+  
   //Move the cursor to that spot
   range.collapse(false);
   selObj.removeAllRanges();
@@ -166,12 +140,9 @@ export function getCaretPosition(el: HTMLInputElement, iframe: HTMLIFrameElement
   }
   else {
     var selObj = getWindowSelection(iframe); //window.getSelection();
-    if (selObj.rangeCount > 0) {
+    if (selObj.rangeCount>0) {
       var selRange = selObj.getRangeAt(0);
-      var preCaretRange = selRange.cloneRange();
-      preCaretRange.selectNodeContents(el);
-      preCaretRange.setEnd(selRange.endContainer, selRange.endOffset);
-      var position = preCaretRange.toString().length;
+      var position = selRange.startOffset;
       return position;
     }
   }
@@ -230,8 +201,8 @@ export function getContentEditableCaretCoords(ctx: { iframe: HTMLIFrameElement, 
 }
 
 function localToRelativeCoordinates(
-  ctx: { iframe: HTMLIFrameElement, parent?: Element },
-  element: Element,
+  ctx: { iframe: HTMLIFrameElement, parent?: Element }, 
+  element: Element, 
   coordinates: { top: number; left: number }
 ) {
   let obj = <HTMLElement>element;

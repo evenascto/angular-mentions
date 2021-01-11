@@ -18,6 +18,10 @@
     <h3>Content Editable</h3>
     <div [mention]="items" class="form-control" contenteditable="true" [mentionConfig]="{insertHTML: false, labelKey: 'name'}"  style="border:1px lightgrey solid;min-height:88px"></div>
     
+
+    <h3>Content Editable - 2</h3>
+    <div [mention]="items" class="form-control" contenteditable="true" [mentionConfig]="{insertHTML: true, mentionSelect: insertSpanText, labelKey: 'name'}"  style="border:1px lightgrey solid;min-height:88px"></div>
+
     <h3>Content Editable - HTML - Element</h3>
     <div
     [mention]="items"
